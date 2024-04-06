@@ -35,7 +35,7 @@ library(ggplot2)
 library(tidyverse)
 library(biomaRt)
 ```
-##Accessing Data
+## Accessing Data
 
 Bioconductor provides access to various biological datasets for analysis. Let's load a sample dataset for differential gene expression analysis:
 ```
@@ -44,7 +44,7 @@ data("airway")
 counts <- airway$count
 conditions <- airway$condition
 ```
-##Differential Expression Analysis with DESeq2
+## Differential Expression Analysis with DESeq2
 
 DESeq2 is commonly used for differential expression analysis of RNA-seq data. Here's how to perform differential expression analysis using DESeq2:
 
@@ -60,7 +60,7 @@ dds <- DESeq(dds)
 # Extract differentially expressed genes
 res <- results(dds)
 ```
-###Differential Expression Analysis with limma
+## Differential Expression Analysis with limma
 
 limma is another popular package for differential expression analysis. Here's how to use limma for differential expression analysis:
 
@@ -80,7 +80,7 @@ res_limma <- topTable(fit, coef = "condition")
 # View top differentially expressed genes
 head(res_limma)
 ```
-##Data Visualization
+## Data Visualization
 Finally, let's visualize the results of differential expression analysis using ggplot2:
 ```
 # Create volcano plot
@@ -97,6 +97,6 @@ ggplot(res, aes(x = baseMean, y = log2FoldChange)) +
        x = "Average Expression",
        y = "Log2 Fold Change")
 ```
-##Conclusion
+## Conclusion
 
 Congratulations! You've now performed basic bioinformatics analysis using R and Bioconductor. This tutorial covers loading packages, accessing data, performing differential expression analysis with DESeq2 and limma, and visualizing the results.
